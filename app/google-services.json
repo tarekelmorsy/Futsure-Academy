@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "67754161971",
+    "project_id": "direct-keel-269022",
+    "storage_bucket": "direct-keel-269022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67754161971:android:cf79a0933ccc9d9f383046",
+        "android_client_info": {
+          "package_name": "com.arEgTA.futsureacademy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "67754161971-7b5hs5ne9mnambt83viuboneg6hjv639.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arEgTA.futsureacademy",
+            "certificate_hash": "d63a8e9285435cbef5f108eaf465c14652888931"
+          }
+        },
+        {
+          "client_id": "67754161971-akq5g7s67ak20obduddvdjqg18q7jdoq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQpCo0lUCeX4zKQjDCGz2FFmA_HPAGtI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "67754161971-akq5g7s67ak20obduddvdjqg18q7jdoq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

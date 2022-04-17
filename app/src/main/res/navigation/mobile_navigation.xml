@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_profile">
+
+    <fragment
+        android:id="@+id/navigation_season"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.season.SeasonFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_season_to_seasoneDetailsFragment"
+            app:destination="@id/seasoneDetailsFragment" />
+        <action
+            android:id="@+id/action_navigation_season_to_addSeasonFragment"
+            app:destination="@id/addSeasonFragment" />
+        <action
+            android:id="@+id/action_navigation_season_to_updateSeasonFragment"
+            app:destination="@id/updateSeasonFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_month"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.monthlyEvaluation.MonthlyEvaluationFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_navigation_month_to_monthDetails"
+            app:destination="@id/monthDetails" />
+        <action
+            android:id="@+id/action_navigation_month_to_addMonthFragment"
+            app:destination="@id/addMonthFragment" />
+        <action
+            android:id="@+id/action_navigation_month_to_updateMonthFragment"
+            app:destination="@id/updateMonthFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_graph"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.graphSeason.GraphSeasonFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_admin"
+            app:destination="@id/navigation_admin" />
+        <action
+            android:id="@+id/action_navigation_profile_to_itemProfileDialogFragment"
+            app:destination="@id/itemProfileDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_admin"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.admin.AdminFragment"
+        android:label="@string/admin"
+        tools:layout="@layout/fragment_all_student" />
+    <fragment
+        android:id="@+id/monthDetails"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.monthlyEvaluation.MonthDetailsFragment"
+        android:label="@string/month_details"
+        tools:layout="@layout/fragment_month_details">
+        <argument
+            android:name="details"
+            app:argType="com.arEgTA.futsureacademy.model.Month" />
+        <action
+            android:id="@+id/action_monthDetails_to_updateMonthFragment"
+            app:destination="@id/updateMonthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seasoneDetailsFragment"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.season.SeasonDetailsFragment"
+        android:label="@string/details_season"
+        tools:layout="@layout/fragment_seasone_details">
+        <argument
+            android:name="season"
+            app:argType="com.arEgTA.futsureacademy.model.Season" />
+        <action
+            android:id="@+id/action_seasoneDetailsFragment_to_updateSeasonFragment"
+            app:destination="@id/updateSeasonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_graph_month"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.graphMonth.GraphMonthFragment"
+        android:label="@string/graph_month"
+        tools:layout="@layout/fragment_graph_month" />
+    <fragment
+        android:id="@+id/addMonthFragment"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.monthlyEvaluation.addMonthFragment.AddMonthFragment"
+        android:label="اضافة شهر"
+        tools:layout="@layout/fragment_add_month">
+
+    </fragment>
+    <fragment
+        android:id="@+id/addSeasonFragment"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.season.addSeasonFragment.AddSeasonFragment"
+        android:label="اضافة موسم"
+        tools:layout="@layout/fragment_add_season" />
+    <dialog
+        android:id="@+id/itemProfileDialogFragment"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.profile.ItemProfileDialogFragment"
+        android:label="fragment_item_profile_dialog_list_dialog"
+        tools:layout="@layout/fragment_item_profile_dialog_list_dialog">
+        <argument
+            android:name="profile"
+            app:argType="com.arEgTA.futsureacademy.model.Profile" />
+    </dialog>
+    <fragment
+        android:id="@+id/updateMonthFragment"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.monthlyEvaluation.updateMonth.UpdateMonthFragment"
+        android:label="تعديل الشهر"
+        tools:layout="@layout/fragment_update_month">
+        <argument
+            android:name="month"
+            app:argType="com.arEgTA.futsureacademy.model.Month" />
+        <action
+            android:id="@+id/action_updateMonthFragment_to_navigation_month"
+            app:destination="@id/navigation_month" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateSeasonFragment"
+        android:name="com.arEgTA.futsureacademy.ui.home.ui.season.updateSeason.UpdateSeasonFragment"
+        android:label="تعديل الموسم"
+        tools:layout="@layout/fragment_update_season">
+        <argument
+            android:name="season"
+            app:argType="com.arEgTA.futsureacademy.model.Season" />
+    </fragment>
+
+</navigation>

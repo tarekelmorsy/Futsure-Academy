@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">FutsureAcademy</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_email">ادخل الاميل</string>
+    <string name="enter_password">ادخل كلمة المرور</string>
+    <string name="welcom">اهلا وسهلا بكم</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="forget_password">نسيت كلمة المرور</string>
+    <string name="create_account">انشاء حساب جديد</string>
+    <string name="enter_name">ادخل الاسم</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="done">تم</string>
+    <string name="title_activity_home">الرئيسية</string>
+    <string name="title_home">التقيم الموسمي</string>
+    <string name="title_dashboard">التقيم الشهري</string>
+    <string name="title_notifications">معدل الانجاز الموسمي</string>
+    <string name="title_graph_month">معدل الانجاز الشهري</string>
+
+    <string name="profile">الملف الشخصي</string>
+    <string name="admin">المسؤلين</string>
+    <string name="leader">القائد :</string>
+    <string name="season">الموسم</string>
+    <string name="total_evaluation">التقيم الاجمالي</string>
+    <string name="date">التاريخ</string>
+    <string name="please_enter_email"> من فضلك ادخل الاميل  </string>
+    <string name="please_enter_password"> من فضلك ادخل كلمة المرور  </string>
+    <string name="please_enter_age"> من فضلك ادخل السن  </string>
+    <string name="please_enter_name"> من فضلك ادخل الاسم  </string>
+    <string name="please_enter_birthday"> من فضلك ادخل تاريخ الميلاد  </string>
+    <string name="please_enter_leader"> من فضلك ادخل اسم القائد  </string>
+    <string name="please_enter_group"> من فضلك ادخل المجموعى  </string>
+    <string name="please_enter_join"> من فضلك ادخل تاريخ الانضمام  </string>
+    <string name="please_enter_confirm_password"> من فضلك اكد كلمة المرور  </string>
+    <string name="please_enter_confirm_password2"> كلة السر غير متظابقة  </string>
+
+
+    <string name="please_enter_right_email"> من فضلك ادخل اميل صحيح  </string>
+
+    <string name="required_field">هذا الحقل مطلوب *</string>
+    <string name="name">الاسم</string>
+    <string name="name2">الاسم :</string>
+    <string name="email">الاميل :</string>
+
+
+    <string name="age">السن</string>
+    <string name="group">المجموعة :</string>
+    <string name="active">التفاعل :</string>
+    <string name="degrees_quran">درجات القران :</string>
+    <string name="quiz">الQUIZ</string>
+    <string name="active_with_leader">التفاعل مع القائد:</string>
+    <string name="attendance">الحضور :</string>
+    <string name="feedback_month">ملاحظات الشهر :</string>
+    <string name="total_summation">الموجموع الكلي :</string>
+    <string name="discussion">المناقشة :</string>
+    <string name="filnal_quiz">الكويز النهائي :</string>
+    <string name="project">المشروع العملي :</string>
+    <string name="testQuran">اختبار القران النهائي :</string>
+    <string name="feedback_season">ملاحظات الموسم :</string>
+    <string name="logOut">تسجيل الخروج</string>
+    <string name="enter_age">ادخل السن</string>
+    <string name="enter_birthday">ادخل تاريخ الميلاد</string>
+    <string name="leaderName">ادخل اسم القائد</string>
+    <string name="enter_group_name">ادخل اسم المجموعة</string>
+    <string name="enter_dateOfJoin">ادخل تاريخ الانضمام</string>
+    <string name="email_sent">ارسلنا لك علي الاميل</string>
+    <string name="details_season">تفاصيل الموسم</string>
+    <string name="assess_month">تقيم الشهر</string>
+    <string name="my_massage">رسالتنا لك ☺️</string>
+    <string name="graph_month">معدل الانجاز الشهري</string>
+    <string name="opend">تم فتح ملف :</string>
+    <string name="enter_user_name">ادخل اسم الطالب</string>
+    <string name="month_details">تفاصيل الشهر</string>
+    <string name="delete">حذف</string>
+</resources>

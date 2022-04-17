@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:layoutDirection="rtl"
+    tools:context=".ui.home.ui.monthlyEvaluation.addMonthFragment.AddMonthFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <EditText
+         android:id="@+id/edDateAddMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:fontFamily="@font/font_two"
+        android:hint="@string/date"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/edLeaderAddMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="5"
+        android:fontFamily="@font/font_two"
+        android:hint="@string/leader"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edDateAddMonth" />
+
+    <EditText
+        android:id="@+id/edSeasonAddMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="6"
+        android:gravity="center"
+        android:fontFamily="@font/font_two"
+        android:hint="@string/season"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edDateAddMonth" />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/edInteractionAddMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="5"
+         android:hint="@string/active"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edLeaderAddMonth"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/edInteractionWhithLeaderAddMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="6"
+         android:hint="@string/active_with_leader"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edSeasonAddMonth" />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/edQuranAddMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="5"
+         android:hint="@string/degrees_quran"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edInteractionAddMonth" />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/edAttendanceAddMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="6"
+         android:hint="@string/attendance"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edInteractionWhithLeaderAddMonth" />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/edQuizAddMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="5"
+         android:hint="@string/quiz"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edQuranAddMonth" />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/edTotalAddMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="6"
+         android:hint="@string/total_summation"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edAttendanceAddMonth" />
+
+        <EditText
+            android:id="@+id/edFeedbackMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:ems="10"
+            android:fontFamily="@font/font_two"
+            android:gravity="center"
+            android:hint="@string/feedback_month"
+            android:inputType="textPersonName"
+            android:textSize="20sp"
+            android:layout_marginBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edQuizAddMonth" />
+
+        <Button
+            android:id="@+id/btDoneAddMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edFeedbackMonth" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

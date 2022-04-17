@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom"
+    android:layoutDirection="rtl"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:theme="@style/BottomSheetDialogStyle">
+
+    <TextView
+        android:id="@+id/tvNameUpdateProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fontone"
+        android:gravity="center"
+        android:text="الاسم"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fontone"
+        android:text="@string/leader"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edLeaderUpdateProfile"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_item"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/fontone"
+        android:text="@string/group"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edGroupUpdateProfile"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_item"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/fontone"
+        android:text="تاريخ الانضمام :"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edDateOfJoinUpdateProfile"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_item"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/fontone"
+        android:text="السن :"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edAgeUpdateProfile"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_item"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp" />
+
+
+    <Button
+        android:id="@+id/btDoneUpdateProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/purple_700"
+        android:fontFamily="@font/fontone"
+        android:text="@string/done"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+</LinearLayout>
