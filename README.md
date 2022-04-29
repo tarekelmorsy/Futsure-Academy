@@ -1,7 +1,11 @@
 # Futsure-Academy app
 
 shopeklobek is an application that turns a Shopify-based store into a mobile app. shopeklobek syncs with Shopify store and transfers a product catalog and user data to a mobile app. The app provides features like promo codes, add location with places api, and convenient payments with popular digital wallets like Paypal
-  ![FA logo](https://user-images.githubusercontent.com/59518219/165974042-5d55637c-e1ad-4387-9c16-04d4bd0dd254.png)
+
+
+  <img src=https://user-images.githubusercontent.com/59518219/165974042-5d55637c-e1ad-4387-9c16-04d4bd0dd254.png"alt="1" height="300"/>
+  
+"Images/1.jpg" 
 
  
 
