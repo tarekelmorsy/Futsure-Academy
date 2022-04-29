@@ -4,7 +4,8 @@ shopeklobek is an application that turns a Shopify-based store into a mobile app
   
 <img src="Images/poster.jpg" alt="1"/>
 
-## Requirements
+## Requirements![WhatsApp Image 2022-01-27 at 1 46 48 AM](https://user-images.githubusercontent.com/59518219/165971159-541300b5-c1ea-42b2-bce4-cd7c6a3e6a91.jpeg)
+
 
 Android studio last version  
 JDK 8  
