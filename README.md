@@ -30,7 +30,7 @@ Use locale Database
 
 
 ## Screenshot
-![1](https://user-images.githubusercontent.com/59518219/165975120-a7692664-b0ea-4a7d-9af6-dd2d2c0bafa9.jpeg)
+![1](https://user-images.githubusercontent.com/59518219/165975120-a7692664-b0ea-4a7d-9af6-dd2d2c0bafa9.jpeg)whith=100
 ![2](https://user-images.githubusercontent.com/59518219/165975124-2378f285-e9ec-4cfd-8faa-6151ac046150.jpeg)
 ![3](https://user-images.githubusercontent.com/59518219/165975128-45767db3-3d01-4ad7-8ae3-a9183227fae4.jpeg)
 ![4](https://user-images.githubusercontent.com/59518219/165975132-990c5dcf-bbc1-458e-9213-afeea5336c99.jpeg)
