@@ -30,7 +30,7 @@ Use locale Database
 
 
 ## Screenshot
-<img src="image/1.jpg" alt="1" height="300"/>
+<img src="image/1.jpeg"  height="300"/>
 
 
 
