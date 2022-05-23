@@ -55,6 +55,7 @@ class FirebaseService : FirebaseMessagingService() {
             createNotificationChannel(notificationManager)
         }
 
+        // form notification
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, FLAG_ONE_SHOT)
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)

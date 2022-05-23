@@ -33,7 +33,7 @@ class UpdateSeasonFragment :
         binding.edSeasonAddSeason.setText(month.season)
         binding.edLeaderAddSeason.setText(month.leader)
         binding.edInteractionAddSeason.setText(month.interaction)
-         binding.edAttendanceAddSeason.setText(month.attendance)
+        binding.edAttendanceAddSeason.setText(month.attendance)
         binding.edQuranAddSeason.setText(month.quran)
         binding.edQuizAddSeason.setText(month.quiz)
         binding.edFeedbackSeason.setText(month.note)

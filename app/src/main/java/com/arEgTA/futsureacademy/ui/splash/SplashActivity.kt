@@ -1,4 +1,4 @@
-    package com.arEgTA.futsureacademy.ui.splash
+package com.arEgTA.futsureacademy.ui.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -18,10 +18,10 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
 
-        if(savedInstanceState==null){
+        if (savedInstanceState == null) {
             lifecycleScope.launch {
                 delay(1000)
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
                     finishAffinity()
                 }

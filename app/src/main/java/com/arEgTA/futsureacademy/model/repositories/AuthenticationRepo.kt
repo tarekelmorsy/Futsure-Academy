@@ -23,10 +23,11 @@ class AuthenticationRepo {
     var database: FirebaseDatabase? = null
     var databaseReferenceProfile: DatabaseReference? = null
     var databaseReferenceUsers: DatabaseReference? = null
-    private lateinit var firebaseAuth: FirebaseAuth
+    private var firebaseAuth: FirebaseAuth
 
     constructor(application: Application) {
         this.application = application
+        // initialization firebase
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
         databaseReferenceProfile = database?.reference!!.child("profile")
@@ -42,12 +43,16 @@ class AuthenticationRepo {
 
     }
 
+    /**
+     * user can register by email and profile information
+     */
     fun register(email: String, password: String, profile: Profile) {
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             if (it.isSuccessful) {
                 //register in firebase
                 firebaseUserMutableLiveData.postValue(firebaseAuth.currentUser)
-                var currentUserDb = firebaseAuth.currentUser?.uid?.let { it1 -> databaseReferenceProfile?.child(it1) }
+                var currentUserDb =
+                    firebaseAuth.currentUser?.uid?.let { it1 -> databaseReferenceProfile?.child(it1) }
                 currentUserDb?.child("name")?.setValue(profile.name)
                 currentUserDb?.child("age")?.setValue(profile.age)
                 currentUserDb?.child("birthday")?.setValue(profile.birthday)
@@ -55,7 +60,8 @@ class AuthenticationRepo {
                 currentUserDb?.child("email")?.setValue(profile.email)
                 currentUserDb?.child("groupName")?.setValue(profile.groupName)
                 currentUserDb?.child("leaderName")?.setValue(profile.leaderName)
-                val sharedPreferences: SharedPreferences = application.getSharedPreferences("sharedPrefFile", Context.MODE_PRIVATE)
+                val sharedPreferences: SharedPreferences =
+                    application.getSharedPreferences("sharedPrefFile", Context.MODE_PRIVATE)
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString(Constants.LOGINID, firebaseAuth.currentUser?.uid)
                 editor.putString(Constants.MONTH, firebaseAuth.currentUser?.uid)
@@ -68,9 +74,10 @@ class AuthenticationRepo {
 
     }
 
-    fun setUser(admin: Admin){
+    fun setUser(admin: Admin) {
         // set data in admin list
-        var currentUserAdmin = firebaseAuth.currentUser?.uid?.let { it1 -> databaseReferenceUsers?.child(it1) }
+        var currentUserAdmin =
+            firebaseAuth.currentUser?.uid?.let { it1 -> databaseReferenceUsers?.child(it1) }
         currentUserAdmin?.child("email")?.setValue(admin.email)
         currentUserAdmin?.child("name")?.setValue(admin.name)
         currentUserAdmin?.child("id")?.setValue(admin.id)
@@ -78,11 +85,16 @@ class AuthenticationRepo {
 
     }
 
+    /**
+     * user can login by email and password
+     */
+
     fun login(email: String, password: String) {
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
             if (it.isSuccessful) {
                 firebaseUserMutableLiveData.postValue(firebaseAuth.currentUser)
-                val sharedPreferences: SharedPreferences = application.getSharedPreferences("sharedPrefFile", Context.MODE_PRIVATE)
+                val sharedPreferences: SharedPreferences =
+                    application.getSharedPreferences("sharedPrefFile", Context.MODE_PRIVATE)
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString(Constants.LOGINID, firebaseAuth.currentUser?.uid)
                 editor.putString(Constants.MONTH, firebaseAuth.currentUser?.uid)
@@ -95,6 +107,9 @@ class AuthenticationRepo {
 
     }
 
+    /**
+     * send message to email to change password
+     */
     fun forgotPassword(userEmail: String) {
 
 
@@ -114,6 +129,9 @@ class AuthenticationRepo {
             }
     }
 
+    /**
+     * signOut from app open register screen
+     */
 
     fun signOut() {
         firebaseAuth.signOut()

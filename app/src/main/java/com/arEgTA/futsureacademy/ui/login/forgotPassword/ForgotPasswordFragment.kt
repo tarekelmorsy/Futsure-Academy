@@ -30,8 +30,9 @@ class ForgotPasswordFragment :
             binding.etLoginEmailForget.doOnTextChanged { text, start, before, count ->
                 if (text!!.isNullOrEmpty()) {
                     binding.tfEmail.error = getString(R.string.please_enter_email)
-                }else {
-                    binding.tfEmail.error = null }
+                } else {
+                    binding.tfEmail.error = null
+                }
 
             }
 

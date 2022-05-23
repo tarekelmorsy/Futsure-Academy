@@ -18,7 +18,8 @@ import com.github.mikephil.charting.utils.ColorTemplate
 import java.util.*
 
 
-class GraphSeasonFragment : BaseFragmentHome<FragmentNotificationsBinding>(FragmentNotificationsBinding::inflate){
+class GraphSeasonFragment :
+    BaseFragmentHome<FragmentNotificationsBinding>(FragmentNotificationsBinding::inflate) {
     private lateinit var barChart: BarChart
     private val graphSeasonViewModel by lazy {
         GraphSeasonViewModel.create(this)
@@ -29,37 +30,38 @@ class GraphSeasonFragment : BaseFragmentHome<FragmentNotificationsBinding>(Fragm
 
         graphSeasonViewModel.getSeason()
         barChart = binding.barChart
-        graphSeasonViewModel.firebaseScoreSeasonMutableLiveData.observe(viewLifecycleOwner){
-            scoreList=it as ArrayList<Score>
+        graphSeasonViewModel.firebaseScoreSeasonMutableLiveData.observe(viewLifecycleOwner) {
+            scoreList = it as ArrayList<Score>
 
-       //scoreList = getScoreList()
+            //scoreList = getScoreList()
 
-        initBarChart()
+            initBarChart()
 
 
-        //now draw bar chart with dynamic data
-        val entries: ArrayList<BarEntry> = ArrayList()
+            //now draw bar chart with dynamic data
+            val entries: ArrayList<BarEntry> = ArrayList()
 
-        //you can replace this data object with  your custom object
-        for (i in scoreList.indices) {
-            val score = scoreList[i]
-            entries.add(BarEntry(i.toFloat(), score.score.toFloat()))
+            //you can replace this data object with  your custom object
+            for (i in scoreList.indices) {
+                val score = scoreList[i]
+                entries.add(BarEntry(i.toFloat(), score.score.toFloat()))
+            }
+
+            val barDataSet = BarDataSet(entries, "")
+            barDataSet.setColors(*ColorTemplate.COLORFUL_COLORS)
+
+            val data = BarData(barDataSet)
+            barChart.data = data
+
+            barChart.invalidate()
+
         }
-
-        val barDataSet = BarDataSet(entries, "")
-        barDataSet.setColors(*ColorTemplate.COLORFUL_COLORS)
-
-        val data = BarData(barDataSet)
-        barChart.data = data
-
-        barChart.invalidate()
-
-    }}
+    }
 
     private fun initBarChart() {
 
 
-//        hide grid lines
+        // hide grid lines
         barChart.axisLeft.setDrawGridLines(false)
         val xAxis: XAxis = barChart.xAxis
         xAxis.setDrawGridLines(false)

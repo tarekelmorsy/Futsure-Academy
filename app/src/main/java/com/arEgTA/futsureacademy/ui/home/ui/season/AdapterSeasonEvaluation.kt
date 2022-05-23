@@ -17,10 +17,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class AdapterSeasonEvaluation(
     var listSeason: List<Season>,
-    var setNavigation: ((Season)-> Unit)? =null,
-    var deleteSeason:((String)->Unit)?=null,
-    var updateSeason:((Season)->Unit)?=null) :
-RecyclerView.Adapter<AdapterSeasonEvaluation.ViewHolder>() {
+    var setNavigation: ((Season) -> Unit)? = null,
+    var deleteSeason: ((String) -> Unit)? = null,
+    var updateSeason: ((Season) -> Unit)? = null
+) :
+    RecyclerView.Adapter<AdapterSeasonEvaluation.ViewHolder>() {
 
 
     inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
@@ -43,29 +44,34 @@ RecyclerView.Adapter<AdapterSeasonEvaluation.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val viwe: View =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_season_evaluation, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_season_evaluation, parent, false)
         return ViewHolder(viwe)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.tvNameSeason.text=listSeason.get(position).season.toString()
-        holder.tvLeaderSeason.text=listSeason.get(position).leader.toString()
-        holder.tvTotalEvaluationSeason.text="%${listSeason.get(position).totalEvaluation}"
+        holder.tvNameSeason.text = listSeason.get(position).season.toString()
+        holder.tvLeaderSeason.text = listSeason.get(position).leader.toString()
+        holder.tvTotalEvaluationSeason.text = "%${listSeason.get(position).totalEvaluation}"
         holder.contentSeason.setOnClickListener {
             setNavigation?.invoke(listSeason.get(position))
         }
         // get user id from sharedPreferences
-        val sharedPreferences = holder.contentSeason.context.getSharedPreferences("sharedPrefFile", Context.MODE_PRIVATE)
+        val sharedPreferences = holder.contentSeason.context.getSharedPreferences(
+            "sharedPrefFile",
+            Context.MODE_PRIVATE
+        )
         var idUser = sharedPreferences.getString(Constants.LOGINID, "0")
 
-        if (idUser.equals("7VrTy19p9OOWG8qVXoasfUz9Esh2")||idUser.equals("TsEOWcKTFyZ5glTnYRlRgyhulN62")){
-            holder.ivDelete.visibility=View.VISIBLE
-            holder.ivUpdate.visibility=View.VISIBLE
+        //These ids belong to the admin
+        if (idUser.equals("7VrTy19p9OOWG8qVXoasfUz9Esh2") || idUser.equals("TsEOWcKTFyZ5glTnYRlRgyhulN62")) {
+            holder.ivDelete.visibility = View.VISIBLE
+            holder.ivUpdate.visibility = View.VISIBLE
 
-        }else{
-            holder.ivDelete.visibility=View.GONE
-            holder.ivUpdate.visibility=View.GONE
+        } else {
+            holder.ivDelete.visibility = View.GONE
+            holder.ivUpdate.visibility = View.GONE
         }
         holder.ivDelete.setOnClickListener {
             deleteSeason?.invoke(listSeason[position].date)
@@ -77,13 +83,12 @@ RecyclerView.Adapter<AdapterSeasonEvaluation.ViewHolder>() {
         }
 
 
-
     }
 
     fun setSeason(season: List<Season>) {
 
-            this.listSeason = season
-            notifyDataSetChanged()
+        this.listSeason = season
+        notifyDataSetChanged()
 
 
     }

@@ -18,14 +18,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var navController :NavController
+    private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-         binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
-          navController = findNavController(R.id.fragmentContainerView)
+        navController = findNavController(R.id.fragmentContainerView)
 
         val appBarConfiguration = AppBarConfiguration(navController.graph)
 
@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()|| super.onSupportNavigateUp()
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
     var activityResultLiveData = MutableLiveData<ActivityResultData?>()
@@ -54,12 +54,22 @@ class LoginActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        activityPermissionResultData.postValue(ActivityPermissionResultData(requestCode, permissions, grantResults))
+        activityPermissionResultData.postValue(
+            ActivityPermissionResultData(
+                requestCode,
+                permissions,
+                grantResults
+            )
+        )
         activityPermissionResultData.postValue(null)
     }
 
     data class ActivityResultData(val requestCode: Int, val resultCode: Int, val data: Intent?)
-    data class ActivityPermissionResultData(val requestCode: Int, val permissions: Array<out String>,val grantResults: IntArray) {
+    data class ActivityPermissionResultData(
+        val requestCode: Int,
+        val permissions: Array<out String>,
+        val grantResults: IntArray
+    ) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

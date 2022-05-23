@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
     var activityResultLiveData = MutableLiveData<ActivityResultData?>()
     var activityPermissionResultData = MutableLiveData<ActivityPermissionResultData?>()
 
@@ -25,12 +26,22 @@ class MainActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        activityPermissionResultData.postValue(ActivityPermissionResultData(requestCode, permissions, grantResults))
+        activityPermissionResultData.postValue(
+            ActivityPermissionResultData(
+                requestCode,
+                permissions,
+                grantResults
+            )
+        )
         activityPermissionResultData.postValue(null)
     }
 
     data class ActivityResultData(val requestCode: Int, val resultCode: Int, val data: Intent?)
-    data class ActivityPermissionResultData(val requestCode: Int, val permissions: Array<out String>,val grantResults: IntArray) {
+    data class ActivityPermissionResultData(
+        val requestCode: Int,
+        val permissions: Array<out String>,
+        val grantResults: IntArray
+    ) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

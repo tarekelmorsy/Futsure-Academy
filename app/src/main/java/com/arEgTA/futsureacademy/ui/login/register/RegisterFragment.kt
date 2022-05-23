@@ -110,7 +110,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
 
                 registerViewModel.userData.observe(viewLifecycleOwner) {
 
-                    registerViewModel.setUser(Admin(email, name, it.uid,group))
+                    registerViewModel.setUser(Admin(email, name, it.uid, group))
                 }
             }
 
@@ -173,8 +173,10 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
         }
         // create an OnDateSetListener
         val dateSetListener = object : DatePickerDialog.OnDateSetListener {
-            override fun onDateSet(view: DatePicker, year: Int, monthOfYear: Int,
-                                   dayOfMonth: Int) {
+            override fun onDateSet(
+                view: DatePicker, year: Int, monthOfYear: Int,
+                dayOfMonth: Int
+            ) {
                 cal.set(Calendar.YEAR, year)
                 cal.set(Calendar.MONTH, monthOfYear)
                 cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
@@ -183,8 +185,10 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
         }
         // create an OnDateSetListener
         val dateSetListener2 = object : DatePickerDialog.OnDateSetListener {
-            override fun onDateSet(view: DatePicker, year: Int, monthOfYear: Int,
-                                   dayOfMonth: Int) {
+            override fun onDateSet(
+                view: DatePicker, year: Int, monthOfYear: Int,
+                dayOfMonth: Int
+            ) {
                 cal.set(Calendar.YEAR, year)
                 cal.set(Calendar.MONTH, monthOfYear)
                 cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
@@ -205,36 +209,40 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                         // set DatePickerDialog to point to today's date when it loads up
                         cal.get(Calendar.YEAR),
                         cal.get(Calendar.MONTH),
-                        cal.get(Calendar.DAY_OF_MONTH)).show()
+                        cal.get(Calendar.DAY_OF_MONTH)
+                    ).show()
                 }
             }
 
         })
 
-    // when you click on the edit text , show DatePickerDialog that is set with OnDateSetListener
-    binding.edDateOfJoinRegister!!.setOnClickListener(object : View.OnClickListener {
-        override fun onClick(view: View) {
-            activity?.let {
-                DatePickerDialog(
-                    it,
-                    dateSetListener2,
-                    // set DatePickerDialog to point to today's date when it loads up
-                    cal.get(Calendar.YEAR),
-                    cal.get(Calendar.MONTH),
-                    cal.get(Calendar.DAY_OF_MONTH)).show()
+        // when you click on the edit text , show DatePickerDialog that is set with OnDateSetListener
+        binding.edDateOfJoinRegister!!.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(view: View) {
+                activity?.let {
+                    DatePickerDialog(
+                        it,
+                        dateSetListener2,
+                        // set DatePickerDialog to point to today's date when it loads up
+                        cal.get(Calendar.YEAR),
+                        cal.get(Calendar.MONTH),
+                        cal.get(Calendar.DAY_OF_MONTH)
+                    ).show()
+                }
             }
-        }
 
-    })
-}
+        })
+    }
+
     private fun updateBirthdayInView() {
         val myFormat = "dd/MM/yyyy" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)
-        binding.edBirthdayRegister!!.setText( sdf.format(cal.getTime()))
+        binding.edBirthdayRegister!!.setText(sdf.format(cal.getTime()))
     }
+
     private fun updateDateOfJoinInView() {
         val myFormat = "dd/MM/yyyy" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)
-        binding.edDateOfJoinRegister!!.setText( sdf.format(cal.getTime()))
+        binding.edDateOfJoinRegister!!.setText(sdf.format(cal.getTime()))
     }
 }

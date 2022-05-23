@@ -26,6 +26,7 @@ class AddMonthFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //check from edit texts
         binding.btDoneAddMonth.setOnClickListener {
             if (binding.edDateAddMonth.text.toString().isNullOrEmpty()) {
                 binding.edDateAddMonth.error = activity?.getString(R.string.required_field)

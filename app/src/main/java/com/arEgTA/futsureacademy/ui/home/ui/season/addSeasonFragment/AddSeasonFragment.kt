@@ -98,8 +98,10 @@ class AddSeasonFragment :
 
         // create an OnDateSetListener
         val dateSetListener = object : DatePickerDialog.OnDateSetListener {
-            override fun onDateSet(view: DatePicker, year: Int, monthOfYear: Int,
-                                   dayOfMonth: Int) {
+            override fun onDateSet(
+                view: DatePicker, year: Int, monthOfYear: Int,
+                dayOfMonth: Int
+            ) {
                 cal.set(Calendar.YEAR, year)
                 cal.set(Calendar.MONTH, monthOfYear)
                 cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
@@ -117,15 +119,17 @@ class AddSeasonFragment :
                         // set DatePickerDialog to point to today's date when it loads up
                         cal.get(Calendar.YEAR),
                         cal.get(Calendar.MONTH),
-                        cal.get(Calendar.DAY_OF_MONTH)).show()
+                        cal.get(Calendar.DAY_OF_MONTH)
+                    ).show()
                 }
             }
 
         })
     }
+
     private fun updateDateInView() {
         val myFormat = "dd/MM/yyyy" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)
-        binding.edDateAddSeason!!.setText( sdf.format(cal.getTime()))
+        binding.edDateAddSeason!!.setText(sdf.format(cal.getTime()))
     }
 }

@@ -18,6 +18,7 @@ class GraphMonthViewModel (application: Application, var userRepo: UserRepo) : A
         firebaseScoreMutableLiveData=userRepo.firebaseScoreMonthMutableLiveData
 
     }
+
     fun getMonth(){
         userRepo.getMonth()
     }

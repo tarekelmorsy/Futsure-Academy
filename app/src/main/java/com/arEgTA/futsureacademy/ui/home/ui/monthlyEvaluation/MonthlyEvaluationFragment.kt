@@ -29,6 +29,7 @@ class MonthlyEvaluationFragment : BaseFragmentHome<FragmentDashboardBinding>(Fra
         val sharedPreferences = requireActivity().getSharedPreferences("sharedPrefFile", Context.MODE_PRIVATE)
         var idUser = sharedPreferences.getString(Constants.LOGINID, "0")
 
+        //These ids belong to the admin
         if (idUser.equals("7VrTy19p9OOWG8qVXoasfUz9Esh2")||idUser.equals("TsEOWcKTFyZ5glTnYRlRgyhulN62")){
             binding.btAddMonth.visibility=View.VISIBLE
         }else{

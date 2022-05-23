@@ -83,12 +83,12 @@ class SeasonFragment : BaseFragmentHome<FragmentHomeBinding>(FragmentHomeBinding
         binding?.reSeason?.adapter = adapterSeasonEvaluation
         // set all season in Recyclerview
         seasonViewModel.firebaseSeasonMutableLiveData.observe(viewLifecycleOwner) {
-            if(it.isNullOrEmpty()){
-                binding.ivEmptySeason.visibility=View.VISIBLE
-                binding.tvEmptySeason.visibility=View.VISIBLE
-            }else{
-                binding.ivEmptySeason.visibility=View.GONE
-                binding.tvEmptySeason.visibility=View.GONE
+            if (it.isNullOrEmpty()) {
+                binding.ivEmptySeason.visibility = View.VISIBLE
+                binding.tvEmptySeason.visibility = View.VISIBLE
+            } else {
+                binding.ivEmptySeason.visibility = View.GONE
+                binding.tvEmptySeason.visibility = View.GONE
             }
             adapterSeasonEvaluation.setSeason(it)
 

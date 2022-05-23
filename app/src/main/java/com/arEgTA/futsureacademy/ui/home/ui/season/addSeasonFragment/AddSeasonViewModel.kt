@@ -10,22 +10,23 @@ import com.arEgTA.futsureacademy.model.Season
 import com.arEgTA.futsureacademy.model.repositories.UserRepo
 import com.arEgTA.futsureacademy.ui.home.ui.monthlyEvaluation.addMonthFragment.AddMonthViewModel
 
-class AddSeasonViewModel (application: Application, var userRepo: UserRepo) : AndroidViewModel(application) {
+class AddSeasonViewModel(application: Application, var userRepo: UserRepo) :
+    AndroidViewModel(application) {
 
 
-    fun setSeason(season: Season){
+    fun setSeason(season: Season) {
         userRepo.setSeason(season)
     }
 
 
-
-    class Factory(private val application: Application, var userRepo: UserRepo) : ViewModelProvider.Factory {
+    class Factory(private val application: Application, var userRepo: UserRepo) :
+        ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return AddSeasonViewModel(application,userRepo) as T
+            return AddSeasonViewModel(application, userRepo) as T
         }
     }
 
-    companion object{
+    companion object {
         fun create(context: Fragment): AddSeasonViewModel = ViewModelProvider(
             context,
             Factory(

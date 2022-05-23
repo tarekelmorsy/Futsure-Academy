@@ -346,11 +346,12 @@ class UserRepo {
 
             }
         }?.addOnFailureListener {
-            Toast.makeText(application,"خطأ في التعديل",Toast.LENGTH_LONG).show()
+            Toast.makeText(application, "خطأ في التعديل", Toast.LENGTH_LONG).show()
 
         }
 
     }
+
     /**
      * update month when click icon update
      */
@@ -359,22 +360,23 @@ class UserRepo {
 
         val monthMap = mapOf<String, String>(
             "date" to month.date,
-            "totalEvaluation" to month.totalEvaluation  ,
-            "season" to month.season ,
-            "leader" to month.leader ,
-            "interaction" to month.interaction ,
-            "interactionWithLeader" to month.interactionWithLeader ,
-            "quran" to month.quran ,
-            "quiz" to month.quiz ,
-            "note" to month.note ,
-            "attendance" to month.attendance ,
+            "totalEvaluation" to month.totalEvaluation,
+            "season" to month.season,
+            "leader" to month.leader,
+            "interaction" to month.interaction,
+            "interactionWithLeader" to month.interactionWithLeader,
+            "quran" to month.quran,
+            "quiz" to month.quiz,
+            "note" to month.note,
+            "attendance" to month.attendance,
         )
         idUser?.let {
-            databaseReferenceMonth?.child(it)?.child(month.date.replace("/", "-"))?.updateChildren(monthMap)?.addOnSuccessListener {
+            databaseReferenceMonth?.child(it)?.child(month.date.replace("/", "-"))
+                ?.updateChildren(monthMap)?.addOnSuccessListener {
 
-            }
+                }
         }?.addOnFailureListener {
-            Toast.makeText(application,"خطأ في التعديل",Toast.LENGTH_SHORT).show()
+            Toast.makeText(application, "خطأ في التعديل", Toast.LENGTH_SHORT).show()
 
         }
 
@@ -383,15 +385,16 @@ class UserRepo {
     /**
      * delete month when click icon delete
      */
-    fun deleteMonth(date:String){
+    fun deleteMonth(date: String) {
         idUser = sharedPreferences.getString(MONTH, "0")
         idUser?.let {
-            databaseReferenceMonth?.child(it)?.child(date.replace("/", "-"))?.removeValue()?.addOnSuccessListener {
-                Toast.makeText(application, "تم الحذف", Toast.LENGTH_SHORT).show()
+            databaseReferenceMonth?.child(it)?.child(date.replace("/", "-"))?.removeValue()
+                ?.addOnSuccessListener {
+                    Toast.makeText(application, "تم الحذف", Toast.LENGTH_SHORT).show()
 
-            }
+                }
         }?.addOnFailureListener {
-            Toast.makeText(application,"خطأ في الحذف",Toast.LENGTH_SHORT).show()
+            Toast.makeText(application, "خطأ في الحذف", Toast.LENGTH_SHORT).show()
 
         }
     }
@@ -400,15 +403,16 @@ class UserRepo {
     /**
      * delete Season when click icon delete
      */
-    fun deleteSeason(date:String){
+    fun deleteSeason(date: String) {
         idUser = sharedPreferences.getString(MONTH, "0")
         idUser?.let {
-            databaseReferenceSeason?.child(it)?.child(date.replace("/", "-"))?.removeValue()?.addOnSuccessListener {
-                Toast.makeText(application, "تم الحذف", Toast.LENGTH_SHORT).show()
+            databaseReferenceSeason?.child(it)?.child(date.replace("/", "-"))?.removeValue()
+                ?.addOnSuccessListener {
+                    Toast.makeText(application, "تم الحذف", Toast.LENGTH_SHORT).show()
 
-            }
+                }
         }?.addOnFailureListener {
-            Toast.makeText(application,"خطأ في الحذف",Toast.LENGTH_SHORT).show()
+            Toast.makeText(application, "خطأ في الحذف", Toast.LENGTH_SHORT).show()
 
         }
     }
@@ -416,30 +420,30 @@ class UserRepo {
     /**
      * Delete all user data
      */
-    fun deleteUser(idUser:String){
+    fun deleteUser(idUser: String) {
         // delete Season
         databaseReferenceSeason?.child(idUser)?.removeValue()?.addOnSuccessListener {
-     }?.addOnFailureListener {
-        Toast.makeText(application,"خطأ في الحذف",Toast.LENGTH_SHORT).show()
+        }?.addOnFailureListener {
+            Toast.makeText(application, "خطأ في الحذف", Toast.LENGTH_SHORT).show()
 
-    }
+        }
         //delete month
         databaseReferenceMonth?.child(idUser)?.removeValue()?.addOnSuccessListener {
-         }?.addOnFailureListener {
-            Toast.makeText(application,"خطأ في الحذف",Toast.LENGTH_SHORT).show()
+        }?.addOnFailureListener {
+            Toast.makeText(application, "خطأ في الحذف", Toast.LENGTH_SHORT).show()
 
         }
         //delete profile
         databaseReferenceProfile?.child(idUser)?.removeValue()?.addOnSuccessListener {
-         }?.addOnFailureListener {
-            Toast.makeText(application,"خطأ في الحذف",Toast.LENGTH_SHORT).show()
+        }?.addOnFailureListener {
+            Toast.makeText(application, "خطأ في الحذف", Toast.LENGTH_SHORT).show()
 
         }
         // delete profile form list
         databaseReferenceUser?.child(idUser)?.removeValue()?.addOnSuccessListener {
             Toast.makeText(application, "تم الحذف", Toast.LENGTH_SHORT).show()
         }?.addOnFailureListener {
-            Toast.makeText(application,"خطأ في الحذف",Toast.LENGTH_SHORT).show()
+            Toast.makeText(application, "خطأ في الحذف", Toast.LENGTH_SHORT).show()
 
         }
 

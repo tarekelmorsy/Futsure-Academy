@@ -33,9 +33,9 @@ class UpdateMonthFragment :
                 binding.edQuranAddMonth.setText(month.quran)
                 binding.edQuizAddMonth.setText(month.quiz)
                 binding.edFeedbackMonth.setText(month.note)
-        binding.edDateAddMonth.setFocusable(false)
+                binding.edDateAddMonth.setFocusable(false)
 
-
+        //check from edit texts
 
         binding.btDoneAddMonth.setOnClickListener {
             if (binding.edDateAddMonth.text.toString().isNullOrEmpty()) {

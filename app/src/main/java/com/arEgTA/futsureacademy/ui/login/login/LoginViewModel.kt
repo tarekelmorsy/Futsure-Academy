@@ -9,35 +9,40 @@ import androidx.lifecycle.ViewModelProvider
 import com.arEgTA.futsureacademy.model.repositories.AuthenticationRepo
 import com.google.firebase.auth.FirebaseUser
 
-class LoginViewModel(application: Application, var authenticationRepo : AuthenticationRepo) : AndroidViewModel(application) {
+class LoginViewModel(application: Application, var authenticationRepo: AuthenticationRepo) :
+    AndroidViewModel(application) {
 
-     var userData = MutableLiveData<FirebaseUser>()
+    var userData = MutableLiveData<FirebaseUser>()
     var loggedStatus = MutableLiveData<Boolean>()
 
     init {
-        userData=authenticationRepo.firebaseUserMutableLiveData
-        loggedStatus=authenticationRepo.userLoggedMutableLiveData
+        userData = authenticationRepo.firebaseUserMutableLiveData
+        loggedStatus = authenticationRepo.userLoggedMutableLiveData
 
     }
 
 
-    fun login(email:String,password:String){
-        authenticationRepo.login(email,password)
+    fun login(email: String, password: String) {
+        authenticationRepo.login(email, password)
 
     }
-    fun signOut(){
+
+    fun signOut() {
         authenticationRepo.signOut()
 
     }
 
 
-    class Factory(private val application: Application,val authenticationRepo: AuthenticationRepo) : ViewModelProvider.Factory {
+    class Factory(
+        private val application: Application,
+        val authenticationRepo: AuthenticationRepo
+    ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return LoginViewModel(application,authenticationRepo) as T
+            return LoginViewModel(application, authenticationRepo) as T
         }
     }
 
-    companion object{
+    companion object {
         fun create(context: Fragment): LoginViewModel = ViewModelProvider(
             context,
             Factory(

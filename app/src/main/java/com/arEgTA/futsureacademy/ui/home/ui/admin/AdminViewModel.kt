@@ -12,11 +12,11 @@ class AdminViewModel(application: Application, var userRepo: UserRepo) :
 
     private var firebaseUsersMutableLiveData_ = MutableLiveData<List<Admin>>()
     private var firebaseSearchMutableLiveData_ = MutableLiveData<List<Admin>>()
-    var firebaseUsersMutableLiveData : LiveData<List<Admin>>
+    var firebaseUsersMutableLiveData: LiveData<List<Admin>>
         get() = firebaseUsersMutableLiveData_
         set(value) {}
-    var firebaseSearchMutableLiveData : LiveData<List<Admin>>
-        get() =firebaseSearchMutableLiveData_
+    var firebaseSearchMutableLiveData: LiveData<List<Admin>>
+        get() = firebaseSearchMutableLiveData_
         set(value) {}
 
     init {
@@ -32,12 +32,13 @@ class AdminViewModel(application: Application, var userRepo: UserRepo) :
     fun searchUser(user: String) {
         userRepo.searchUser(user)
     }
-    fun deleteUser(idUser:String) {
+
+    fun deleteUser(idUser: String) {
         userRepo.deleteUser(idUser)
     }
 
 
-        class Factory(private val application: Application, var userRepo: UserRepo) :
+    class Factory(private val application: Application, var userRepo: UserRepo) :
         ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return AdminViewModel(application, userRepo) as T

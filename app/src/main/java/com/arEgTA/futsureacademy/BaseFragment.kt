@@ -8,9 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.arEgTA.futsureacademy.ui.login.LoginActivity
 
-abstract class BaseFragment<T : ViewBinding>(val viewBindingInflater:(LayoutInflater)->T): Fragment(){
+abstract class BaseFragment<T : ViewBinding>(val viewBindingInflater: (LayoutInflater) -> T) :
+    Fragment() {
 
-    val mainActivity by lazy{
+    val mainActivity by lazy {
         this.activity as LoginActivity
     }
 
@@ -18,21 +19,24 @@ abstract class BaseFragment<T : ViewBinding>(val viewBindingInflater:(LayoutInfl
         viewBindingInflater(layoutInflater)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return binding.root
     }
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mainActivity.activityPermissionResultData.observe(viewLifecycleOwner){
-            if(it!=null)
+        mainActivity.activityPermissionResultData.observe(viewLifecycleOwner) {
+            if (it != null)
                 onRequestPermissionsResult(it)
         }
         mainActivity.activityResultLiveData.observe(viewLifecycleOwner)
         {
-            if(it!=null)
+            if (it != null)
                 onActivityResult(it)
         }
     }

@@ -38,10 +38,11 @@ class MonthDetailsFragment : BaseFragmentHome<FragmentMonthDetailsBinding>(Fragm
             binding.tvDateMonth.text=date
         }
 
-// get user id from sharedPreferences
+        // get user id from sharedPreferences
         val sharedPreferences = requireActivity().getSharedPreferences("sharedPrefFile", Context.MODE_PRIVATE)
         var idUser = sharedPreferences.getString(Constants.LOGINID, "0")
 
+        //These ids belong to the admin
         if (idUser.equals("7VrTy19p9OOWG8qVXoasfUz9Esh2")||idUser.equals("TsEOWcKTFyZ5glTnYRlRgyhulN62")){
             binding.btUpdateMonth.visibility=View.VISIBLE
 

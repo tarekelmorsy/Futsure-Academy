@@ -16,7 +16,7 @@ import com.arEgTA.futsureacademy.databinding.ActivityHomeBinding
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private lateinit var navController : NavController
+    private lateinit var navController: NavController
 
 
     private val drawerAppBarConfiguration by lazy {
@@ -35,23 +35,25 @@ class HomeActivity : AppCompatActivity() {
 
         val navView: BottomNavigationView = binding.navView
 
-          navController = findNavController(R.id.nav_host_fragment_activity_home)
+        navController = findNavController(R.id.nav_host_fragment_activity_home)
 
         val appBarConfiguration = AppBarConfiguration(
-                setOf(
-                    R.id.navigation_season, R.id.navigation_month,
-                    R.id.navigation_graph,R.id.navigation_profile,R.id.navigation_graph_month
+            setOf(
+                R.id.navigation_season, R.id.navigation_month,
+                R.id.navigation_graph, R.id.navigation_profile, R.id.navigation_graph_month
 
-                )
             )
+        )
 
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()|| super.onSupportNavigateUp()
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
+
     var activityResultLiveData = MutableLiveData<ActivityResultData?>()
     var activityPermissionResultData = MutableLiveData<ActivityPermissionResultData?>()
 
@@ -68,12 +70,22 @@ class HomeActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        activityPermissionResultData.postValue(ActivityPermissionResultData(requestCode, permissions, grantResults))
+        activityPermissionResultData.postValue(
+            ActivityPermissionResultData(
+                requestCode,
+                permissions,
+                grantResults
+            )
+        )
         activityPermissionResultData.postValue(null)
     }
 
     data class ActivityResultData(val requestCode: Int, val resultCode: Int, val data: Intent?)
-    data class ActivityPermissionResultData(val requestCode: Int, val permissions: Array<out String>,val grantResults: IntArray) {
+    data class ActivityPermissionResultData(
+        val requestCode: Int,
+        val permissions: Array<out String>,
+        val grantResults: IntArray
+    ) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
