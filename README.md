@@ -1,6 +1,5 @@
-# Futsure-Academy app
-
-Futsure-Academy This application is for parents to follow the progress of their children, monthly and seasonal The administrator can add a month or season, edit or delete any page
+# Future-Academy app
+Future -Academy This application is for parents to track their children's progress, monthly and seasonally, and the administrator can add a month or season, edit or delete any page or add a child's level rating monthly and seasonally 
 
  
  
